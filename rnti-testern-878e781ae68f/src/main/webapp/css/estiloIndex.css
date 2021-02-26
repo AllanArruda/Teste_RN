@@ -1,0 +1,46 @@
+@CHARSET "ISO-8859-1";
+
+.z-center-body{
+	
+	padding: 0px;
+
+}
+
+.z-north-body{
+	
+	padding:0px;
+	
+}
+
+.z-west-body{
+	
+	padding: 0px;
+	
+}
+
+.z-east-body{
+	
+	padding: 0px;
+	
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  color: #ffffff;
+  background-color: #0093f9;
+}
+
+.z-panel-header{
+	
+	color: #ffffff;
+	background-color: #0093f9;
+	padding: 10px;
+	
+}
+
+.z-panel{
+	
+	border-color: #0093f9;
+	
+}

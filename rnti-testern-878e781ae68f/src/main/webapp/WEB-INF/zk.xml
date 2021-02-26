@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk>
+
+	<library-property>
+		<name>org.zkoss.zul.progressbox.position</name>
+		<value>center,center</value>
+	</library-property>
+
+	<client-config>	
+		<data-handler>
+			<name>tooltip</name>
+			<script>
+				function (wgt, placement) { 
+					$(wgt.$n()).tooltip({placement: placement});
+				}
+			</script>
+		</data-handler>
+	</client-config>
+	
+</zk>

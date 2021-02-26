@@ -1,0 +1,22 @@
+<zk xmlns:n="xhtml" xmlns:w="client">
+	<div width="100%" height="100%" align="center" style="padding: 10px" viewModel="@id('vm') @init('rodarte.testern.viewmodel.VmPageInicio')">
+		
+		<textbox visible="@load(vm.visibilidadeBotaoLerEProcessar)" readonly="true" width="50%" placeholder="Selecione um arquivo..." style="color: gray; font-style: italic" value="@load(vm.nomeArquivo)"/><button upload="true, maxsize=-1,accept=.xlsx" iconSclass="fas fa-upload" tooltiptext="Clique para selecionar um arquivo" onUpload="@command('uploadArquivo')" visible="@load(vm.visibilidadeBotaoLerEProcessar)"/>
+				
+		<div class="alert alert-success" w:role="alert" visible="@load(not vm.visibilidadeBotaoLerEProcessar)">
+			<n:h4 class="alert-heading">Leitura da base e processamento realizados com sucesso!</n:h4>
+			
+			<n:hr/>
+				
+			<label value="Clique no botão abaixo para exportar os resultados."/>
+			<n:br/>
+		</div>				
+				
+		<separator/>
+		
+		<button visible="@load(vm.visibilidadeBotaoLerEProcessar)" class="success-button" label="Ler e Processar Arquivo" onClick="@command('lerArquivoEProcessar')"/>
+		<button visible="@load(not vm.visibilidadeBotaoLerEProcessar)" label="Exportar Resultados" class="fas fa-download" onClick="@command('exportarResultados')"/>
+		<button visible="@load(not vm.visibilidadeBotaoLerEProcessar)" label="Reiniciar Importação" class="fas fa-sync-alt warning-button" onClick="@command('resetarImportacao')"/>
+				
+	</div>
+</zk>

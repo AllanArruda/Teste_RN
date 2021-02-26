@@ -1,0 +1,69 @@
+<?link rel="shortcut icon" type="image/x-icon" href="/imagens/icones/icone_rn.ico"?>
+<?link rel="icon" type="image/x-icon" href="/imagens/icones/icone_rn.ico"?>
+
+<html viewModel="@id('vm') @init('rodarte.testern.viewmodel.VmTimeout')">
+	<head>
+		 <meta charset="utf-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+		<title textContent="@load('Sessão Expirada - '.concat(vm.informacoesDoProjeto.nome))"/>
+
+		<style type="text/css">
+			body {
+				background-color: #fff;
+			}
+
+			body, td {
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+				font-size: 11pt;
+			}
+
+			#border {
+				width: 520px;
+				border: 4px solid #e0e2e5;
+				padding: 8px;
+				border-collapse: initial;
+				-moz-border-radius: 10px;
+				-webkit-border-radius: 10px;
+			}
+
+			#image {
+				margin-right: 30px;
+			}
+
+			#caption {
+				text-align: left;
+				border-bottom: 4px solid #e0e2e5;
+				padding-bottom: 8px;
+				margin-bottom: 8px;
+				margin-right: 10px;
+				font-size: 16px;
+				font-weight: normal;
+				width: 300px;
+			}
+
+			#detail {
+				color: #aaa;
+				margin-top: 9px;
+				margin-right: 8px;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div style="height: 36%"></div>
+			<table id="border" align="center">
+				<tr>
+					<td><img id="image" src="imagens/icones/relogio.png"/></td>
+					<td>
+						<h2 id="caption">Desculpe, sua sessão expirou!</h2>
+						<div id="detail">
+							Por favor, faça login novamente
+	
+							<a href="@load('../'.concat(vm.informacoesDoProjeto.caminhoDeAcesso))">clicando aqui</a>.
+						</div>
+					</td>
+				</tr>
+			</table>
+	</body>
+</html>

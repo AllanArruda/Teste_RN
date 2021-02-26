@@ -1,0 +1,84 @@
+<?page contentType="text/html;charset=UTF-8" id="pageIndex" title="Teste RN - Sistema JAVA"?>
+
+<?link href="css/ajusteszk.css" rel="stylesheet" type="text/css"?>
+<?link href="webjars/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet" type="text/css"?>
+<?link href="css/estiloIndex.css" rel="stylesheet" type="text/css"?>
+<?link href="webjars/font-awesome/5.3.1/css/all.min.css" rel="stylesheet" type="text/css"?>
+
+<?link rel="shortcut icon" type="image/x-icon" href="/imagens/icones/icone_rn.ico"?>
+<?link rel="icon" type="image/x-icon" href="/imagens/icones/icone_rn.ico"?>
+<zk xmlns:n="xhtml">
+
+	<style>
+		body {
+  			padding: 0;  
+		}
+		.tooltip {
+			z-index : 9999;
+		}
+		.tooltip-inner {
+			max-width : 450px;
+		}
+		.btn .btn-default .dropdown-toggle:active {
+			border: none;
+		}
+	</style>
+	
+	<borderlayout height="100%" width="100%" style="overflow-y: auto" 
+		viewModel="@id('vm') @init('rodarte.testern.viewmodel.VmIndex')">
+		<north size="40px" style="text-align: center;">
+			<borderlayout>
+				<west border="none" size="250px"/>
+				<center border="none">
+					<div width="100%" style="display: flex; align-items: center; justify-content: center" height="100%">
+						<label style="font-size: 16px; font-weight: bold" value="@load(vm.informacoesDoProjeto.nome)"/>
+					</div>
+				</center>
+				<east border="none" size="250px">
+					<div height="100%" style="display:flex; align-items: center; margin-right: 3px; justify-content: flex-end">
+						<button label="Usuário" dir="reverse" image="imagens/icones/usuario.png" 
+							sclass="btn btn-default dropdown-toggle" popup="mnpMenuUsuario, after_end" iconSclass="caret" 
+							style="border: none; box-shadow: none" tooltiptext="Clique e veja as opções disponíveis."/>
+					</div>
+				</east>
+			</borderlayout>
+		</north>
+	
+		<west title="Menu" collapsible="true" open="true" size="17%" style="overflow-y: auto">
+			<vlayout>
+				<n:ul class="nav nav-pills nav-stacked">
+					<n:li role="presentation" sclass="active">
+						<a href="" focus="true">
+							<span sclass="fas fa-list-ul"/> <space/><label value="Início"/>
+						</a>
+					</n:li>
+				</n:ul>
+				<n:ul class="nav nav-pills nav-stacked">
+					<n:li role="presentation">
+						<a href="" onClick="@command('abrirTelaArquivos')">
+							<span sclass="fas fa-copy"/> <space/><label value="Arquivos"/>
+						</a>
+					</n:li>
+				</n:ul>
+			</vlayout>
+		</west>
+				
+		<center style="overflow-y: auto">
+			<borderlayout>
+				
+				<center style="overflow-y: auto">
+					<include src="pageInicio.zul"/>
+				</center>
+			</borderlayout>
+		</center>
+		<south visible="false">
+			<menupopup id="mnpMenuUsuario">
+				<menuitem label="Sair" tooltiptext="Encerre sua sessão com segurança."/>
+			</menupopup>
+		</south>
+	</borderlayout>
+	
+	<script src="webjars/jquery/3.3.1/jquery.min.js"></script>
+	<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+</zk>

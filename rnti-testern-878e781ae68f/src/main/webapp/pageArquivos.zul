@@ -1,0 +1,19 @@
+<zk>
+<window title="Arquivos" border="normal" mode="modal" closable="true" width="50%" viewModel="@id('vm') @init('rodarte.testern.viewmodel.VmArquivos')">
+
+	<listbox>
+		<listhead>
+			<listheader width="80%"/>
+			<listheader/>
+		</listhead>
+		
+		<listitem>
+			<listcell style="background: white; color: black" label="Base de importação"/>
+			<listcell style="background: white; color: black">
+				<button class="btn-md fas fa-download" tooltiptext="Baixar Arquivo" onClick="@command('baixarArquivoBaseImportacao')"/>
+			</listcell>
+		</listitem>
+	</listbox>
+
+</window>
+</zk>
